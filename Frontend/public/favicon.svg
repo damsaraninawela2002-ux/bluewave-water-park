@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#075985" />
+      <stop offset="50%" stopColor="#0284C7" />
+      <stop offset="100%" stopColor="#06B6D4" />
+    </linearGradient>
+    <linearGradient id="sun" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#FEF08A" />
+      <stop offset="100%" stopColor="#F59E0B" />
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="url(#bg)" />
+  <circle cx="35" cy="13" r="4" fill="url(#sun)" />
+  <circle cx="35" cy="13" r="5.5" stroke="#FEF08A" stroke-width="0.8" opacity="0.4" />
+  <path d="M4 36C11 36 15 31 22 31C29 31 33 34 44 34V44H4V36Z" fill="#FFFFFF" fill-opacity="0.3" />
+  <path d="M4 31C13 31 17 25 25 25C33 25 36 29 44 28V44H4V31Z" fill="#FFFFFF" fill-opacity="0.6" />
+  <path d="M4 25C12 25 16 18 24 18C31 18 35 22 41 20C42.8 19.4 43.5 18 43 16.5C42.5 15 40.5 15.5 39 17C35 20.5 30 15 23 15C15 15 11 22 4 22V25Z" fill="#FFFFFF" />
+  <path d="M4 38C12 38 18 35 26 35C34 35 38 38 44 38V44H4V38Z" fill="#FFFFFF" fill-opacity="0.9" />
+</svg>

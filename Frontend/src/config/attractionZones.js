@@ -1,0 +1,81 @@
+/**
+ * BlueWave Attraction Zones Configuration
+ * Authentic categories representing BlueWave's park zones:
+ * 1. SpeedBay - High-Speed Water Slides
+ * 2. SplashBay - Water Splash & Play Area
+ * 3. ChillBay - Relaxation & Leisure Area
+ */
+export const ATTRACTION_ZONES = [
+  {
+    id: 'speedbay',
+    category: 'SpeedBay',
+    stickerName: 'SpeedBay',
+    title: 'SpeedBay',
+    tagline: 'High-Speed Water Slides',
+    description: 'Fast water slides, thrilling turns, and adrenaline-filled experiences.',
+    ctaText: 'Explore SpeedBay',
+    image:  '/images/1.jpeg',
+    fallbackImage: 'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=1200&q=80',
+    theme: {
+      accentColor: 'text-aqua-600 dark:text-aqua-400',
+      taglineColor: 'text-aqua-600 dark:text-aqua-400',
+      badgeBg: 'bg-aqua-600 text-white',
+      badgeBorder: 'border-aqua-400',
+      btnBg: 'bg-aqua-500 hover:bg-aqua-600 text-white dark:bg-aqua-500 dark:hover:bg-aqua-400 dark:text-navy-950',
+      glow: 'group-hover:shadow-aqua-500/20',
+      activeRing: 'ring-aqua-500 dark:ring-aqua-400',
+      solidBg: 'bg-aqua-600 dark:bg-aqua-700',
+      stickerBg: 'bg-aqua-700 dark:bg-aqua-800',
+      btnText: 'text-aqua-950',
+      btnHover: 'hover:bg-aqua-50',
+    },
+  },
+  {
+    id: 'splashbay',
+    category: 'SplashBay',
+    stickerName: 'SplashBay',
+    title: 'SplashBay',
+    tagline: 'Water Splash & Play Area', 
+    description: 'Wave pools, splash zones, and fun water activities.',
+    ctaText: 'Explore SplashBay',
+    image:  '/images/m.jpeg',
+    fallbackImage: 'https://images.unsplash.com/photo-1520255870062-bd79d3865de7?auto=format&fit=crop&w=1200&q=80',
+    theme: {
+      accentColor: 'text-ocean-600 dark:text-aqua-300',
+      taglineColor: 'text-ocean-600 dark:text-aqua-400',
+      badgeBg: 'bg-ocean-700 text-white',
+      badgeBorder: 'border-ocean-500',
+      btnBg: 'bg-ocean-800 hover:bg-ocean-900 text-white dark:bg-ocean-600 dark:hover:bg-ocean-500',
+      glow: 'group-hover:shadow-ocean-500/20',
+      activeRing: 'ring-ocean-500 dark:ring-ocean-400',
+      solidBg: 'bg-ocean-700 dark:bg-ocean-800',
+      stickerBg: 'bg-ocean-800 dark:bg-ocean-900',
+      btnText: 'text-ocean-950',
+      btnHover: 'hover:bg-ocean-50',
+    },
+  },
+  {
+    id: 'chillbay',
+    category: 'ChillBay',
+    stickerName: 'ChillBay',
+    title: 'ChillBay',
+    tagline: 'Relaxation & Leisure Area',
+    description: 'Relaxing water areas, gentle activities, and family-friendly leisure.',
+    ctaText: 'Explore ChillBay',
+    image: '/images/v.jpeg',
+    fallbackImage: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
+    theme: {
+      accentColor: 'text-coral-500 dark:text-coral-400',
+      taglineColor: 'text-coral-500 dark:text-coral-400',
+      badgeBg: 'bg-coral-500 text-white',
+      badgeBorder: 'border-coral-400',
+      btnBg: 'bg-coral-500 hover:bg-coral-600 text-white shadow-coral',
+      glow: 'group-hover:shadow-coral-500/20',
+      activeRing: 'ring-coral-500 dark:ring-coral-400',
+      solidBg: 'bg-coral-500 dark:bg-coral-600',
+      stickerBg: 'bg-coral-600 dark:bg-coral-700',
+      btnText: 'text-coral-950',
+      btnHover: 'hover:bg-coral-50',
+    },
+  },
+];

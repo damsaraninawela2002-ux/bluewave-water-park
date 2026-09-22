@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #F8FAFC;
+    color: #1E293B;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Custom Aquatic Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #BAE6FD;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0EA5E9;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0B1220;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #1E293B;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #0284C7;
+}
+
+/* Theme Adaptive Wave Dividers */
+.wave-fill-sand {
+  fill: #F8FAFC;
+  transition: fill 300ms ease-in-out;
+}
+.dark .wave-fill-sand {
+  fill: #0B1220;
+}
+
+/* Slight image brightness dimming in dark mode for comfortable contrast */
+.dark img:not(.no-dim) {
+  filter: brightness(0.92);
+  transition: filter 300ms ease;
+}
+
+/* ==========================================================================
+   Animated Water Bubbles
+   ========================================================================== */
+.bubble-container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.bubble {
+  position: absolute;
+  top: 0;
+  left: var(--left);
+  width: var(--size);
+  height: var(--size);
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(186, 230, 253, 0.22) 28%,
+    rgba(56, 189, 248, 0.1) 62%,
+    rgba(255, 255, 255, 0.25) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.55),
+              inset -1px -1px 4px rgba(14, 165, 233, 0.22),
+              0 0 10px rgba(186, 230, 253, 0.25);
+  opacity: var(--op);
+  pointer-events: none;
+  will-change: transform, opacity;
+  transition: background 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+}
+
+/* Cyan-tinted higher glow in dark mode */
+.dark .bubble {
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(34, 211, 238, 0.45) 28%,
+    rgba(6, 182, 212, 0.14) 62%,
+    rgba(14, 116, 144, 0.32) 100%
+  );
+  border: 1px solid rgba(103, 232, 249, 0.55);
+  box-shadow: inset 0 0 8px rgba(103, 232, 249, 0.55),
+              inset -1px -1px 5px rgba(6, 182, 212, 0.35),
+              0 0 16px rgba(6, 182, 212, 0.4);
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(110vh) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  8% {
+    opacity: var(--op);
+  }
+  30% {
+    transform: translateY(75vh) translateX(var(--sway)) scale(0.92);
+  }
+  60% {
+    transform: translateY(40vh) translateX(calc(-1 * var(--sway))) scale(1.04);
+  }
+  85% {
+    transform: translateY(10vh) translateX(calc(var(--sway) * 0.5)) scale(1.08);
+    opacity: var(--op);
+  }
+  100% {
+    transform: translateY(-20vh) translateX(0) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.bubble-local {
+  top: auto;
+  bottom: -60px;
+}
+
+@keyframes riseLocal {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.85);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--op);
+  }
+  50% {
+    transform: translateY(-50%) translateX(var(--sway)) scale(1.05);
+  }
+  90% {
+    opacity: var(--op);
+  }
+  100% {
+    transform: translateY(-110%) translateX(0) scale(1);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .bubble {
+    animation: rise var(--dur) ease-in-out var(--delay) infinite;
+  }
+  .bubble-local {
+    animation: riseLocal var(--dur) ease-in-out var(--delay) infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble,
+  .bubble-local,
+  .bubble-container {
+    display: none !important;
+  }
+}
